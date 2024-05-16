@@ -1,29 +1,34 @@
-# Adaptação API REST com Node e Express
+# Aplicação de um ESB
 
-Converter a estrutura de entidades e funcionalidades da atividade anterior para um banco de dados relacional e aplicando a estrutura MVC.
+## Objetivo
+Ao cadastrar uma postagem no servidor2, a postagem é cadastrada no servidor1.
 
-## Estrutura de Pastas:
+## Requisitos
+- Utilizar fetch API para interligar com o barramento.
+- Toda postagem possui conteúdo, título e autorID.
 
-src 
-   |__ api
-   |__ config
-   |__ controllers
-   |__ models
-   |__ index.js
-   |__ package.json
+## Integrações disponíveis
+- Cadastro de postagem.
 
-* api - Representa a _View_ do MVC, onde as rotas da API REST serão definidas.
-* config - Contém o arquivo de configuração do banco de dados.
-* controllers - Representa o _Controller_ do MVC, onde a lógica de negócio será implementada.
-* models - Representa o _Model_ do MVC, onde as entidades do banco de dados serão definidas.
-* index.js - Arquivo principal da aplicação, onde o servidor será inicializado.
-  
-## Passos sugeridos:
+## Simulação
+Para simular o funcionamento, siga os passos abaixo:
 
-1. Converter a estrutura de Usuário para MVC.
-2. Converter a estrutura de Postagens para MVC.
-3. Testar as rotas usando ferramentas como Postman ou curl.
-4. Integrar as entidades no banco de dados.
-5. Testar as rotas usando ferramentas como Postman ou curl e verificar o banco de dados.
-6. Aplicar um middleware de validação as rotas de Postagens e as rotas de alteração, listagem e deleção de Usuários.
-7. Testar as rotas usando ferramentas como Postman ou curl
+1. Clone o repositório:
+```bash
+git clone https://github.com/DuHansen/Esb
+
+Inicie os 3 servidores.
+Cadastre um usuário nos dois bancos utilizando o método POST:
+http://localhost:8000/users/
+http://localhost:7000/users/
+Exemplo de corpo da requisição:
+
+{
+    "nome": "jack",
+    "email": "jack@gmail.com",
+    "senha": "123"
+}
+
+Cadastre uma postagem utilizando o método POST:
+http://localhost:8000/post
+
