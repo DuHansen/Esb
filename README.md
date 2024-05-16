@@ -34,8 +34,8 @@ http://localhost:8000/post
 Exemplo de corpo da requisição:
 
 {
-    "titulo": "Nunca conheci quem tivesse levado porrada.",
-    "conteudo": "Todos os meus conhecidos têm sido campeões em tudo.",
+    "titulo": "Linha reta",
+    "conteudo": "Nunca conheci quem tivesse levado porrada. Todos os meus conhecidos têm sido campeões em tudo.",
     "autorID": 1
 }
 
